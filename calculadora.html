@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/agrinho.png">
+    <link rel="shortcut icon" href="../img/agrinho.png">
+    <link rel="apple-touch-icon" href="../img/agrinho.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sustentabilidade | Agro Sustentável</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/calculadora.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header-transparent">
+        <div class="container">
+            <div class="logo"> <!-- CORRIGIDO: antes havia caractere estranho -->
+                <i class="fas fa-seedling"></i>
+                <span>Agro Sustentável</span>
+ 
+
+            </div>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="mapa.html">Mapa Interativo</a>
+                <a href="calculadora.html">Calculadora</a>
+                <div class="font-control">
+                    <button id="font-minus" class="font-btn" aria-label="Diminuir fonte">
+                        <i class="fas fa-minus"></i> A-
+                    </button>
+                    <button id="font-plus" class="font-btn" aria-label="Aumentar fonte">
+                        <i class="fas fa-plus"></i> A+
+                    </button>
+                </div>
+                <button id="dark-mode-toggle" class="dark-toggle" aria-label="Alternar modo escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="quiz-container">
+            <div class="container">
+                <div class="quiz-card" id="quiz-card">
+                    <!-- Barra de progresso -->
+                    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+
+                    <form id="quiz-form">
+                        <!-- Passo 1: Agrotóxicos -->
+                        <div class="quiz-step active" id="step-1">
+                            <h3><span class="step-number">01</span> Uso de Agrotóxicos</h3>
+                            <div class="options-grid">
+                                <label class="option-card"><input type="radio" name="q1" value="10" required><span class="option-title">Práticas orgânicas</span><span class="option-desc">Não uso agrotóxicos sintéticos</span></label>
+                                <label class="option-card"><input type="radio" name="q1" value="6"><span class="option-title">Manejo integrado</span><span class="option-desc">Uso reduzido e controlado</span></label>
+                                <label class="option-card"><input type="radio" name="q1" value="3"><span class="option-title">Uso moderado</span><span class="option-desc">Aplicações periódicas</span></label>
+                                <label class="option-card"><input type="radio" name="q1" value="0"><span class="option-title">Convencional intensivo</span><span class="option-desc">Alta dependência química</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Passo 2: Matriz Energética -->
+                        <div class="quiz-step" id="step-2">
+                            <h3><span class="step-number">02</span> Matriz Energética</h3>
+                            <div class="options-grid">
+                                <label class="option-card"><input type="radio" name="q2" value="10"><span class="option-title">100% renovável</span><span class="option-desc">Solar, eólica, biomassa</span></label>
+                                <label class="option-card"><input type="radio" name="q2" value="7"><span class="option-title">Mix sustentável</span><span class="option-desc">Maioria fontes limpas</span></label>
+                                <label class="option-card"><input type="radio" name="q2" value="4"><span class="option-title">Convencional</span><span class="option-desc">Rede elétrica apenas</span></label>
+                                <label class="option-card"><input type="radio" name="q2" value="1"><span class="option-title">Fóssil</span><span class="option-desc">Geradores a diesel</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Passo 3: Conservação do Solo -->
+                        <div class="quiz-step" id="step-3">
+                            <h3><span class="step-number">03</span> Conservação do Solo</h3>
+                            <div class="options-grid">
+                                <label class="option-card"><input type="radio" name="q3" value="10"><span class="option-title">Sistema completo</span><span class="option-desc">Plantio direto, rotação, cobertura</span></label>
+                                <label class="option-card"><input type="radio" name="q3" value="7"><span class="option-title">Práticas parciais</span><span class="option-desc">Algumas medidas adotadas</span></label>
+                                <label class="option-card"><input type="radio" name="q3" value="4"><span class="option-title">Manejo convencional</span><span class="option-desc">Preparo tradicional</span></label>
+                                <label class="option-card"><input type="radio" name="q3" value="1"><span class="option-title">Degradação ativa</span><span class="option-desc">Aragem frequente, erosão</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Passo 4: Uso da Água -->
+                        <div class="quiz-step" id="step-4">
+                            <h3><span class="step-number">04</span> Uso da Água</h3>
+                            <div class="options-grid">
+                                <label class="option-card"><input type="radio" name="q4" value="10"><span class="option-title">Eficiência total</span><span class="option-desc">Gotejamento + captação de chuva</span></label>
+                                <label class="option-card"><input type="radio" name="q4" value="6"><span class="option-title">Controle regular</span><span class="option-desc">Irrigação convencional monitorada</span></label>
+                                <label class="option-card"><input type="radio" name="q4" value="3"><span class="option-title">Desperdício</span><span class="option-desc">Sem medição de consumo</span></label>
+                                <label class="option-card"><input type="radio" name="q4" value="0"><span class="option-title">Alto impacto</span><span class="option-desc">Irrigação sem controle, perdas</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Passo 5: Biodiversidade -->
+                        <div class="quiz-step" id="step-5">
+                            <h3><span class="step-number">05</span> Biodiversidade</h3>
+                            <div class="options-grid">
+                                <label class="option-card"><input type="radio" name="q5" value="10"><span class="option-title">Conservacionista</span><span class="option-desc">APPs, reserva legal, corredores</span></label>
+                                <label class="option-card"><input type="radio" name="q5" value="7"><span class="option-title">Preservação moderada</span><span class="option-desc">Parte da área com mata nativa</span></label>
+                                <label class="option-card"><input type="radio" name="q5" value="4"><span class="option-title">Baixa diversidade</span><span class="option-desc">Pouca vegetação natural</span></label>
+                                <label class="option-card"><input type="radio" name="q5" value="1"><span class="option-title">Monocultura extensiva</span><span class="option-desc">Sem áreas preservadas</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Botões de navegação -->
+                        <div class="quiz-navigation">
+                            <button type="button" id="prev-btn" class="btn-secondary" disabled><i class="fas fa-arrow-left"></i> Anterior</button>
+                            <button type="button" id="next-btn" class="btn-primary">Próximo <i class="fas fa-arrow-right"></i></button>
+                            <button type="button" id="submit-btn" class="btn-primary" style="display: none;">Ver Resultado <i class="fas fa-chart-line"></i></button>
+                        </div>
+                    </form>
+
+                    <div id="result" style="display: none;">
+                        <div id="score-message"></div>
+                        <div id="tips" class="tips-box"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/calculadora.js"></script>
+</body>
+</html>

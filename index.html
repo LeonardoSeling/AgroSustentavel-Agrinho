@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/agrinho.png">
+    <link rel="shortcut icon" href="../img/agrinho.png">
+    <link rel="apple-touch-icon" href="../img/agrinho.png">  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte & Sustentável | Início</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Elemento para o brilho do cursor (animado via JS) -->
+    <div class="cursor-glow"></div>
+
+    <!-- Cabeçalho fixo transparente -->
+    <header class="header-transparent">
+        <div class="container">
+            <div class="logo"> <!-- CORRIGIDO: antes havia caractere estranho -->
+                <i class="fas fa-seedling"></i>
+                <span>Agro Sustentável</span>
+ 
+
+            </div>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="mapa.html">Mapa Interativo</a>
+                <a href="calculadora.html">Calculadora</a>
+                <div class="font-control">
+                    <button id="font-minus" class="font-btn" aria-label="Diminuir fonte">
+                        <i class="fas fa-minus"></i> A-
+                    </button>
+                    <button id="font-plus" class="font-btn" aria-label="Aumentar fonte">
+                        <i class="fas fa-plus"></i> A+
+                    </button>
+                </div>
+                <button id="dark-mode-toggle" class="dark-toggle" aria-label="Alternar modo escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção hero (destaque principal) -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="badge">Agrinho 2025</div>
+                    <h1>Agro Forte &<br>Sustentável</h1>
+                    <p>Transformando dados em ação para um futuro agrícola regenerativo no Paraná. Mapeamos a sustentabilidade e damos as ferramentas para você evoluir.</p>
+                    <div class="hero-buttons">
+                        <a href="mapa.html" class="btn-primary">Explorar Mapa <i class="fas fa-arrow-right"></i></a>
+                        <a href="calculadora.html" class="btn-secondary">Calcular Impacto <i class="fas fa-chart-simple"></i></a>
+                    </div>
+                    <div class="hero-stats">
+                        <div><span>10+</span> Regiões mapeadas</div>
+                        <div><span>5</span> Indicadores</div>
+                        <div><span>100%</span> Dados oficiais</div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <a href="mapa.html" class="floating-card card-1" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-map"></i>
+                        <span>Mapa da Sustentabilidade</span>
+                    </a>
+                    <a href="calculadora.html" class="floating-card card-2" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-calculator"></i>
+                        <span>Calculadora Rural</span>
+                    </a>
+                    <a href="#features" class="floating-card card-3" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Nota por região</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-wave"></div>
+        </section>
+
+        <!-- Seção de funcionalidades -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Por dentro da plataforma</h2>
+                    <p>Informação confiável + ferramenta prática = transformação</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-database"></i></div>
+                        <h3>Dados oficiais</h3>
+                        <p>IPARDES, SEAB, IDR-Paraná, EMBRAPA e pesquisas acadêmicas atualizadas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Experiência interativa</h3>
+                        <p>Mapa clique e calculadora inteligente com feedback personalizado.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Transição ecológica</h3>
+                        <p>Orientações práticas para reduzir impacto e aumentar produtividade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chamada para ação -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Pronto para conhecer o perfil da sua região?</h2>
+                    <p>Clique no mapa e descubra o nível de sustentabilidade de cada mesorregião do Paraná</p>
+                    <a href="mapa.html" class="btn-primary">Ir para o mapa <i class="fas fa-map-marked-alt"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Depoimento autoral do produtor (semântico com figure/blockquote) -->
+        <section class="depoimento-autoral" aria-label="Depoimento de produtor rural">
+            <div class="container">
+                <figure class="depoimento-card">
+                    <img src="../img/geraldo.png" alt="Retrato de Geraldo da Silva, produtor rural" class="depoimento-icone">
+                    <figcaption class="depoimento-conteudo">
+                        <blockquote class="depoimento-texto">
+                            <p>“Antes eu usava muito defensivo e via a terra ficar cada vez mais dura. Depois que comecei o plantio direto e a rotação de culturas, minha produção de soja aumentou 20% e a água da nascente voltou a brotar. O segredo é equilíbrio entre tecnologia e respeito ao meio ambiente.”</p>
+                        </blockquote>
+                        <p class="depoimento-autor">— Geraldo da Silva, produtor rural em Máripa (PR)</p>
+                        <small class="depoimento-credito">Depoimento autoral de um personagem fictício escrito pelo estudante, baseado em práticas reais do campo.</small>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Projeto educacional Agrinho 2025 | Dados: IPARDES, SEAB, IDR-Paraná, EMBRAPA</p>
+            <div class="footer-links">
+                <a href="index.html">Início</a>
+                <a href="mapa.html">Mapa</a>
+                <a href="calculadora.html">Calculadora</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
