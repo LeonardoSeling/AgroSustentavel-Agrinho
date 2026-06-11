@@ -62,6 +62,9 @@ HTML5, CSS3, JavaScript puro (sem frameworks). Design responsivo, modo escuro e 
 - **Ícones:** Font Awesome 6.0
 - **Fontes:** Google Fonts (Inter, Space Grotesk)
 - **Avatar:** Criado no Piskel (100% autoral)
+- **mapa do paraná em SVG:** utilizado do wikimedeiacommons e editado por mim
+- **link do mapa**
+- https://commons.wikimedia.org/wiki/Category:SVG_maps_of_Paran%C3%A1#/media/File%3AParana_MesoMicroMunicip.svg
 
 ## ♿ Acessibilidade
 
