@@ -426,9 +426,14 @@ nav a.active {
    SEÇÃO DE FUNCIONALIDADES (FEATURES)
    ================================================ 
    Cards que explicam os recursos da plataforma */
+   .features {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8f0ea 100%);
+}
 
-.features {
-    padding: 5rem 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section-header {
@@ -437,81 +442,277 @@ nav a.active {
 }
 
 .section-header h2 {
-    font-family: 'Space Grotesk', sans-serif;
     font-size: 2.2rem;
-    color: #0B3B2F;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
-/* Grid responsivo de features */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.section-header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
 }
 
-/* Card individual de feature */
-.feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 2rem;
-    text-align: center;
-    transition: all 0.3s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-    border: 1px solid #E2E8E0;
+/* Timeline vertical */
+.features-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
-.feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
-    border-color: #E6B91E;
+/* Linha vertical central - COR DOURADA */
+.features-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #E6B91E, #F5C542, #E6B91E);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(230, 185, 30, 0.5);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.5s; }
+.timeline-item:nth-child(3) { animation-delay: 0.8s; }
+
+/* Item à esquerda */
+.timeline-item.left {
+    flex-direction: row;
+}
+
+.timeline-item.left .timeline-marker {
+    order: 1;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.timeline-item.left .timeline-content {
+    order: 2;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Item à direita */
+.timeline-item.right {
+    flex-direction: row;
+}
+
+.timeline-item.right .timeline-marker {
+    order: 2;
+    text-align: left;
+    padding-left: 2rem;
+}
+
+.timeline-item.right .timeline-content {
+    order: 1;
+    text-align: right;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.timeline-marker {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Ícone do feature - COR DOURADA */
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #E6B91E, #F5C542);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(230, 185, 30, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(230, 185, 30, 0.3);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.feature-icon:hover::before {
+    transform: scale(1.3);
 }
 
 .feature-icon i {
-    font-size: 2.5rem;
-    color: #E6B91E;
-    margin-bottom: 1rem;
-}
-
-/* Animações de entrada com delays */
-.feature-card:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.feature-card:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.feature-card:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-/* ================================================
-   SEÇÃO DE CHAMADA PARA AÇÃO (CTA)
-   ================================================ 
-   Seção que incentiva o usuário a explorar o mapa */
-
-.cta-section {
-    padding: 3rem 0 5rem;
-}
-
-.cta-card {
-    background: linear-gradient(145deg, #0B3B2F, #1A5A46);
-    padding: 3rem;
-    border-radius: 2rem;
-    text-align: center;
+    font-size: 2rem;
     color: white;
 }
 
-.cta-card h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.feature-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(230, 185, 30, 0.4);
 }
 
-.cta-card .btn-primary {
+.timeline-content {
+    width: 50%;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Setas conectando à linha do tempo */
+.timeline-item.left .timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: white;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item.right .timeline-content::before {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: white;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-item.left .timeline-content:hover {
+    transform: translateX(10px) translateY(-5px);
+}
+
+.timeline-item.right .timeline-content:hover {
+    transform: translateX(-10px) translateY(-5px);
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    color: #7f8c8d;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Círculos na linha do tempo - COR DOURADA */
+.timeline-marker::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
     background: #E6B91E;
-    color: #0B3B2F;
-    border: none;
-    margin-top: 1rem;
+    border: 3px solid white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 3px rgba(230, 185, 30, 0.3);
+    z-index: 3;
+}
+
+.timeline-item.left .timeline-marker::after {
+    right: -8px;
+}
+
+.timeline-item.right .timeline-marker::after {
+    left: -8px;
+}
+
+/* Animação */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Dark mode para a seção de features */
+.dark-mode .features {
+    background: linear-gradient(135deg, #0F1F12 0%, #142A18 100%);
+}
+
+.dark-mode .section-header h2 {
+    color: #F0F7EA;
+}
+
+.dark-mode .section-header p {
+    color: #C8DCC8;
+}
+
+.dark-mode .timeline-content {
+    background: #1C2A1C;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .timeline-content h3 {
+    color: #F0F7EA;
+}
+
+.dark-mode .timeline-content p {
+    color: #C8DCC8;
+}
+
+.dark-mode .timeline-item.left .timeline-content::before,
+.dark-mode .timeline-item.right .timeline-content::before {
+    background: #1C2A1C;
+}
+
+/* Mantém os círculos dourados no modo escuro */
+.dark-mode .timeline-marker::after {
+    background: #E6B91E;
+    border-color: #1A2A1A;
+}
+
+.dark-mode .feature-icon {
+    background: linear-gradient(135deg, #E6B91E, #F5C542);
+    box-shadow: 0 10px 30px rgba(230, 185, 30, 0.2);
+}
+
+.dark-mode .features-timeline::before {
+    background: linear-gradient(to bottom, #E6B91E, #F5C542, #E6B91E);
 }
 
 /* ================================================
