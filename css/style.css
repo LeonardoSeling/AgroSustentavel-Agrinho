@@ -137,6 +137,7 @@ nav a {
     color: #2C3A2B;
     font-weight: 500;
     transition: color 0.2s;
+    margin-left: 2rem;
 }
 
 nav a:hover, 
@@ -344,18 +345,21 @@ nav a.active {
 /* ================================================
    CARDS FLUTUANTES ANIMADOS
    ================================================ 
-   Cards que flutuam na área visual do hero */
+ /* ================================================
+   CARDS FLUTUANTES ANIMADOS (VERSÃO RESPONSIVA)
+   ================================================ */
 
 .hero-visual {
     position: relative;
-    height: 350px;
+    min-height: 350px;
+    height: auto;
 }
 
 .floating-card {
     position: absolute;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(8px);
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 60px;
     display: flex;
     align-items: center;
@@ -367,6 +371,19 @@ nav a.active {
     transition: transform 0.3s, box-shadow 0.3s;
     text-decoration: none;
     color: inherit;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Ajuste para telas menores - quebra o texto se necessário */
+@media (max-width: 700px) {
+    .floating-card {
+        white-space: normal;
+        text-align: center;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        max-width: 180px;
+    }
 }
 
 .floating-card:hover {
@@ -375,53 +392,50 @@ nav a.active {
 }
 
 .floating-card i {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #0B3B2F;
+    flex-shrink: 0;
 }
 
-/* Posicionamento individual dos cards com delays diferentes */
+/* Posicionamento responsivo dos cards */
 .card-1 {
-    top: 20%;
+    top: 5%;
     left: 0;
     animation-delay: 0s;
 }
 
 .card-2 {
-    top: 60%;
-    right: 10%;
+    top: 40%;
+    right: 0;
     animation-delay: 1s;
 }
 
 .card-3 {
-    bottom: 10%;
-    left: 20%;
+    bottom: 5%;
+    left: 15%;
     animation-delay: 2s;
+}
+
+/* Ajuste para telas médias (tablets) */
+@media (max-width: 900px) {
+    .card-1 { top: 0; left: 0; }
+    .card-2 { top: 35%; right: 0; }
+    .card-3 { bottom: 0; left: 10%; }
+}
+
+/* Ajuste para telas pequenas - esconde os cards flutuantes e usa layout alternativo */
+@media (max-width: 700px) {
+    .hero-visual {
+        display: none;
+    }
 }
 
 /* Animação de flutuação */
 @keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
 }
-
-/* Onda decorativa na parte inferior do hero */
-.hero-wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDEyMCIgZmlsbD0iI0ZCRkZCOCI+PHBhdGggZD0iTTAgMzJ2ODhIMTIwMFYzMmMtMTUuOSA4LjUtMzMuNyAxMi41LTUzIDEyLjVTMTE3MS45IDQwLjUgMTE1MCAzMnMtMzQuOC0xMi01NC0xMi01Mi45IDQuNS03MiAxMi01MS4xIDguMi03MC41IDEyLTQ4LjYgNi4zLTY4IDkuNi00OS4yIDUtNjkuNSA1LTUyLjItMi4zLTcyLTYuNi00OC4zIDUuMi02NyA4LTQ5LjQgMy4yLTY4LjQgMC0zNy40LTQuMy01Ni44LTcuMy0zOC41IDQuMi01Ny44IDYuNS0zOCA0LjYtNTcuNiA0LjYtMzguNiAwLTU4LTMuMi0zOC42IDMuNi01OCA3LjJ6Ii8+PC9zdmc+') repeat-x;
-    background-size: 1200px 60px;
-}
-
 
 /* ================================================
    SEÇÃO DE FUNCIONALIDADES (FEATURES)
