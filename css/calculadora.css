@@ -649,3 +649,116 @@
             padding: 0.5rem;
         }
     }
+    
+
+
+/* Cards de análise no modo escuro */
+.dark-mode .analise-card {
+    background: #1C2A1C;
+    border-color: #2C3E2C;
+}
+
+.dark-mode .analise-card .analise-titulo {
+    border-bottom-color: #2C3E2C;
+}
+
+.dark-mode .analise-card ul li {
+    color: #E5E7E6;
+}
+
+.dark-mode .analise-card ul li i {
+    color: #E6B91E;
+}
+
+/* Mensagem de resultado no modo escuro */
+.dark-mode .resultado-mensagem {
+    background: #1C2A1C;
+}
+
+.dark-mode .resultado-mensagem.nota-excelente {
+    background: #1A3A1A;
+    border-left-color: #2E7D32;
+}
+
+.dark-mode .resultado-mensagem.nota-bom {
+    background: #2A3A1A;
+    border-left-color: #E6B91E;
+}
+
+.dark-mode .resultado-mensagem.nota-atencao {
+    background: #3A2A1A;
+    border-left-color: #FF9800;
+}
+
+.dark-mode .resultado-mensagem.nota-urgente {
+    background: #3A1A1A;
+    border-left-color: #D32F2F;
+}
+
+.dark-mode .resultado-mensagem p {
+    color: #E5E7E6;
+}
+
+/* Nota circular no modo escuro */
+.dark-mode .resultado-nota-circular {
+    background: #1A2A1A;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .nota-rotulo {
+    color: #A8C3A8;
+}
+
+
+
+/* Tabela de desempenho no modo escuro */
+.dark-mode .tabela-desempenho {
+    background: #1C2A1C;
+    border-color: #2C3E2C;
+}
+
+.dark-mode .tabela-desempenho th {
+    background: #2A3E2A;
+    color: #F0F7EA;
+}
+
+.dark-mode .tabela-desempenho td {
+    border-bottom-color: #2C3E2C;
+    color: #E5E7E6;
+}
+
+.dark-mode .tabela-desempenho td i {
+    color: #E6B91E;
+}
+
+/* Níveis na tabela no modo escuro */
+.dark-mode .nivel-excelente { color: #4CAF50; }
+.dark-mode .nivel-bom { color: #E6B91E; }
+.dark-mode .nivel-regular { color: #FFB74D; }
+.dark-mode .nivel-crítico { color: #EF5350; }
+
+/* Rodapé do resultado no modo escuro */
+.dark-mode .resultado-rodape {
+    border-top-color: #2C3E2C;
+    color: #A8C3A8;
+}
+
+/* Botão de comparar no modo escuro */
+.dark-mode .btn-primary {
+    background: #E6B91E;
+    color: #0B3B2F;
+}
+
+.dark-mode .btn-primary:hover {
+    background: #F5C542;
+}
+
+.dark-mode .btn-secondary {
+    background: #2C3E2C;
+    color: #E5E7E6;
+    border-color: #2C3E2C;
+}
+
+.dark-mode .btn-secondary:hover {
+    background: #3A5A3A;
+}
