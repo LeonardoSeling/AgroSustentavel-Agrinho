@@ -316,7 +316,29 @@ document.addEventListener('DOMContentLoaded', function() {
             modalOverlay.classList.add('active');
             return;
         }
+// Dentro da função que abre o modal (ex: abrirModalNormal e abrirModalComparacao)
+document.body.style.overflow = 'hidden';   // TRAVA O SCROLL DA PÁGINA
 
+// Dentro da função que fecha o modal (ex: fecharModal)
+document.body.style.overflow = '';         // LIBERA O SCROLL
+
+// Também no evento de clique no overlay e tecla ESC
+modalOverlay.addEventListener('click', (e) => { 
+    if (e.target === modalOverlay) {// Dentro da função que abre o modal (abrirModalNormal / abrirModalComparacao):
+document.body.style.overflow = 'hidden';   // trava o scroll da página
+
+// Dentro da função que fecha o modal (fecharModal):
+document.body.style.overflow = '';         // libera
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+document.addEventListener('keydown', (e) => { 
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
         // Constrói o HTML do modal com informações detalhadas da região
         modalContentDiv.innerHTML = `
             <div class="modal-normal">
