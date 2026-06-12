@@ -422,6 +422,7 @@ nav a.active {
     background-size: 1200px 60px;
 }
 
+
 /* ================================================
    SEÇÃO DE FUNCIONALIDADES (FEATURES)
    ================================================ 
@@ -713,6 +714,35 @@ nav a.active {
 
 .dark-mode .features-timeline::before {
     background: linear-gradient(to bottom, #E6B91E, #F5C542, #E6B91E);
+}
+
+/* ================================================
+   SEÇÃO DE CHAMADA PARA AÇÃO (CTA)
+   ================================================ 
+   Seção que incentiva o usuário a explorar o mapa */
+
+.cta-section {
+    padding: 3rem 0 5rem;
+}
+
+.cta-card {
+    background: linear-gradient(145deg, #0B3B2F, #1A5A46);
+    padding: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.cta-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-card .btn-primary {
+    background: #E6B91E;
+    color: #0B3B2F;
+    border: none;
+    margin-top: 1rem;
 }
 
 /* ================================================
