@@ -1,6 +1,6 @@
 /**
  * ================================================
- * MAPA INTERATIVO - ESTILOS COMPLETOS
+ * MAPA INTERATIVO - ESTILOS COMPLETOS (MODAIS MAIORES)
  * ================================================
  * 
  * Este arquivo contém todos os estilos específicos para a página do mapa,
@@ -28,8 +28,7 @@ body {
 
 /* ================================================
    HEADER MODERNO (REUTILIZA style.css)
-   ================================================ 
-   Header fixo/sticky com efeito de blur */
+   ================================================ */
 
 header {
     background: white;
@@ -43,8 +42,7 @@ header {
 
 /* ================================================
    PAGE HEADER ESTILIZADO (TOPO DA PÁGINA)
-   ================================================ 
-   Cabeçalho com gradiente verde, badge, título e estatísticas */
+   ================================================ */
 
 .page-header {
     position: relative;
@@ -69,7 +67,6 @@ header {
     max-width: 600px;
 }
 
-/* Badge decorativa */
 .header-badge {
     display: inline-flex;
     align-items: center;
@@ -85,7 +82,6 @@ header {
     border: 1px solid rgba(230, 185, 30, 0.3);
 }
 
-/* Título principal */
 .header-content h1 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 3rem;
@@ -101,7 +97,6 @@ header {
     display: inline-block;
 }
 
-/* Subtítulo */
 .header-content p {
     color: rgba(255, 255, 255, 0.85);
     font-size: 1.1rem;
@@ -109,7 +104,6 @@ header {
     margin-bottom: 2rem;
 }
 
-/* Estatísticas do header */
 .header-stats {
     display: flex;
     gap: 2rem;
@@ -131,8 +125,7 @@ header {
 
 /* ================================================
    DECORAÇÃO FLUTUANTE (FOLHAS ANIMADAS)
-   ================================================ 
-   Elementos visuais decorativos no cabeçalho */
+   ================================================ */
 
 .header-decoration {
     position: relative;
@@ -149,12 +142,10 @@ header {
     animation: floatLeaf 6s infinite ease-in-out;
 }
 
-/* Posicionamento individual das folhas */
 .leaf-1 { top: 20px; left: 20px; width: 50px; height: 50px; animation-delay: 0s; }
 .leaf-2 { top: 80px; right: 0; width: 35px; height: 35px; animation-delay: 1.5s; }
 .leaf-3 { bottom: 20px; left: 40px; width: 45px; height: 45px; animation-delay: 0.8s; }
 
-/* Animação de flutuação das folhas */
 @keyframes floatLeaf {
     0% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-15px) rotate(10deg); }
@@ -163,8 +154,7 @@ header {
 
 /* ================================================
    CARD DO MAPA
-   ================================================ 
-   Container principal que envolve o SVG e a legenda */
+   ================================================ */
 
 .map-card {
     background: white;
@@ -178,7 +168,6 @@ header {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Container do SVG com efeito de vidro */
 .mapa-container {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(4px);
@@ -197,11 +186,6 @@ header {
     border-radius: 0.5rem;
 }
 
-/* ================================================
-   ESTILOS DAS REGIÕES NO SVG
-   ================================================ 
-   Cada região (path) tem animações e efeitos de hover */
-
 svg path {
     transition: all 0.2s ease;
     cursor: pointer;
@@ -214,17 +198,11 @@ svg path:hover {
     stroke-width: 3;
 }
 
-/* Efeito de pulso suave nas regiões */
 svg path {
     transition: filter 0.2s, stroke-width 0.2s, transform 0.2s;
     transform-origin: center;
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
 }
-
-/* ================================================
-   LEGENDA DO MAPA
-   ================================================ 
-   Explica as cores e significados das regiões */
 
 .mapa-legend {
     display: flex;
@@ -249,8 +227,7 @@ svg path {
 
 /* ================================================
    TOOLTIP FLUTUANTE
-   ================================================ 
-   Aparece ao passar o mouse sobre as regiões */
+   ================================================ */
 
 .map-tooltip {
     position: fixed;
@@ -273,8 +250,7 @@ svg path {
 
 /* ================================================
    MODAL PRINCIPAL
-   ================================================ 
-   Janela modal para exibir informações detalhadas */
+   ================================================ */
 
 .modal-overlay {
     display: none;
@@ -299,46 +275,43 @@ svg path {
     transition: backdrop-filter 0.3s;
 }
 
-/* Modal padrão e de comparação (tamanhos responsivos) */
+/* Modal - largura aumentada significativamente */
 .modal {
     background: white;
     width: 90%;
-    max-width: 520px;
+    max-width: 1700px;        /* ANTES: 520px - AGORA BEM MAIOR */
+    max-height: 90vh;         /* Limita a altura à tela */
     border-radius: 2rem;
     box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.3);
     transform: scale(0.95);
     transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     position: relative;
-    overflow: hidden;
+    overflow: hidden;         /* Sem scroll no modal em si */
     border: 1px solid rgba(230, 185, 30, 0.3);
+    display: flex;
+    flex-direction: column;
 }
 
-/* Modal para comparação (maior) */
-.modal-grande {
-    max-width: 800px;
-    width: 90%;
-}
 
 .modal-overlay.active .modal {
     transform: scale(1);
 }
 
-/* Botão de fechar */
 .modal-close {
     position: absolute;
     top: 1rem;
     right: 1rem;
     background: #F1F5F9;
     border: none;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #1E293B;
     z-index: 10;
 }
@@ -349,89 +322,26 @@ svg path {
     transform: rotate(90deg);
 }
 
-/* Conteúdo do modal */
+/* Conteúdo interno com mais espaço */
 .modal-content {
-    padding: 2rem;
-}
-
-.modal-content h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.8rem;
-    color: #0B3B2F;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #E6B91E;
-    padding-left: 1rem;
-}
-
-.modal-content h2 i {
-    margin-right: 0.5rem;
-    color: #E6B91E;
-}
-
-/* Linhas de informação */
-.modal-info-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.2rem;
-    align-items: flex-start;
-}
-
-.modal-info-icon {
-    min-width: 32px;
-    text-align: center;
-    font-size: 1.2rem;
-    color: #E6B91E;
-}
-
-.modal-info-text {
+    padding: 2rem 2rem 2rem 2rem;
+    max-height: unset;
     flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.modal-info-text strong {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: #0B3B2F;
-}
-
-.modal-info-text p {
-    margin: 0;
-    color: #2C4B3E;
-    line-height: 1.4;
-}
-
-/* Card de nota no modal */
-.modal-nota {
-    background: #F0FDF4;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin: 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.modal-nota span:first-child {
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.modal-nota span:last-child {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #E6B91E;
-}
-
-/* Fonte dos dados */
-.modal-fonte {
-    font-size: 0.7rem;
-    color: #8B9BA8;
-    margin-top: 1rem;
-    text-align: right;
-    border-top: 1px solid #E2E8E0;
-    padding-top: 1rem;
+/* Ajuste fino para telas muito grandes (acima de 1400px) */
+@media (min-width: 1400px) {
+    .modal {
+        max-width: 1200px;
+    }
+    .modal-grande {
+        max-width: 1400px;
+    }
+    .modal-content {
+        padding: 2.5rem;
+    }
 }
 
 /* ================================================
@@ -475,8 +385,7 @@ svg path {
 
 /* ================================================
    MODAL DE COMPARAÇÃO (ENTRE FAZENDA E REGIÃO)
-   ================================================ 
-   Layout em grid para comparar duas colunas */
+   ================================================ */
 
 .comparacao-modal .comparacao-grid {
     display: grid;
@@ -513,7 +422,6 @@ svg path {
     color: #0B3B2F;
 }
 
-/* Notas grandes */
 .nota-valor-grande {
     font-size: 3rem;
     font-weight: 800;
@@ -534,7 +442,6 @@ svg path {
     border-radius: 60px;
 }
 
-/* Lista de categorias */
 .categorias-lista {
     display: flex;
     flex-direction: column;
@@ -576,7 +483,6 @@ svg path {
     line-height: 1.4;
 }
 
-/* Mensagem da fazenda */
 .mensagem-fazenda {
     background: #FFF9E6;
     border-left: 4px solid #E6B91E;
@@ -586,7 +492,6 @@ svg path {
     margin-top: 1rem;
 }
 
-/* Informações detalhadas da região */
 .info-regiao-detalhada {
     display: flex;
     flex-direction: column;
@@ -618,7 +523,6 @@ svg path {
     margin-top: 0.5rem;
 }
 
-/* Aviso da comparação */
 .comparacao-aviso {
     margin-top: 1rem;
     font-size: 0.75rem;
@@ -631,8 +535,7 @@ svg path {
 
 /* ================================================
    ESTILOS ESPECÍFICOS PARA CADA REGIÃO (HOVER)
-   ================================================ 
-   Cada região tem definições individuais de cor e hover */
+   ================================================ */
 
 #curitiba, #sudeste, #sudoeste, #oeste, 
 #centroocidente, #centrooriente, #noroeste, 
@@ -670,8 +573,7 @@ footer a {
 
 /* ================================================
    MODO ESCURO (DARK MODE) - MAPA
-   ================================================ 
-   Sobrescrita de cores para o tema escuro */
+   ================================================ */
 
 .dark-mode .map-card {
     background: #1A2A1A;
@@ -749,32 +651,26 @@ footer a {
 
 /* ================================================
    RESPONSIVIDADE
-   ================================================ 
-   Adaptações para tablets e dispositivos móveis */
+   ================================================ */
 
 @media (max-width: 768px) {
     .page-header { 
         padding: 3rem 0; 
         text-align: center; 
     }
-    
     .header-content { 
         max-width: 100%; 
         text-align: center; 
     }
-    
     .header-stats { 
         justify-content: center; 
     }
-    
     .header-decoration { 
         display: none; 
     }
-    
     .header-content h1 { 
         font-size: 2rem; 
     }
-    
     .mapa-container { 
         padding: 1rem; 
     }
@@ -784,12 +680,52 @@ footer a {
     .comparacao-modal .comparacao-grid {
         grid-template-columns: 1fr;
     }
-    
     .modal {
         max-width: 95%;
     }
-    
+    .modal-content {
+        padding: 1.5rem;
+    }
     .modal-grid, .comparacao-grid {
         grid-template-columns: 1fr;
     }
+}
+/* ================================================
+   BARRA DE ROLAGEM DO MODAL - UMA SÓ
+   ================================================ */
+
+/* Estilização da barra de rolagem (webkit) */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #E2E8E0;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #E6B91E;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #F5C542;
+}
+
+/* Para Firefox */
+.modal-content {
+    scrollbar-width: thin;
+    scrollbar-color: #E6B91E #E2E8E0;
+}
+
+/* Dark mode para a barra de rolagem */
+.dark-mode .modal-content::-webkit-scrollbar-track {
+    background: #2C3E2C;
+}
+.dark-mode .modal-content::-webkit-scrollbar-thumb {
+    background: #E6B91E;
+}
+.dark-mode .modal-content {
+    scrollbar-color: #E6B91E #2C3E2C;
 }
